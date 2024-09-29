@@ -1,0 +1,19 @@
+main {
+    background-color: aqua;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100px auto;
+    height: 100vh;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    color: white;
+    
+}
+
+.contentBox {
+}

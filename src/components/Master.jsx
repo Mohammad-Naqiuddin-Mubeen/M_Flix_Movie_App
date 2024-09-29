@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import HomePage from "./HomePage";
 
 export const Master = () => {
   return (
-    <div>Master</div>
-  )
-}
+    <>
+      <HomePage></HomePage>
+    </>
+  );
+};
