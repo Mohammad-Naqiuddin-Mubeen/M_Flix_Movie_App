@@ -1,19 +1,21 @@
 main {
-    background-color: aqua;
+    background-color: black;
     width: 100vw;
     display: grid;
     grid-template-columns: 100px auto;
     height: 100vh;
+    font-family: monospace;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 60vw;
 }
 
 .navBar {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: hsla(0, 0%, 0%, 0.8);
+    background-color: hsla(0, 0%, 0%, 0.70);
     color: white;
     
 }
 
-.contentBox {
-}

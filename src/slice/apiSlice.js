@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import apiCall from "../apiCall/apiCall";
 
-const slice = createSlice({
+const apiSlice = createSlice({
   name: "redux",
   initialState: {
     isLoading: false,
@@ -29,4 +29,4 @@ const slice = createSlice({
   },
 });
 
-export default slice.reducer;
+export default apiSlice.reducer;

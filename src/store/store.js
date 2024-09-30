@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import slice from "../slice/slice";
+import apiSlice from "../slice/apiSlice";
+import filterMovie from "../slice/filterMovie";
 
 const store = configureStore({
   reducer: {
-    redux: slice,
+    redux: apiSlice,
+    filter : filterMovie,
   },
 });
 

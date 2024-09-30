@@ -1,5 +1,53 @@
 .movieDetailsContainer {
-    border: 1px solid;
     width: 100%;
     height: 100vh;
+    display: grid;
+    grid-template-rows: 55% 1fr;
+    /* background-color: black; */
+}
+
+.movieInfo {
+}
+
+.textInfo .title {
+    width: 400px;
+    height: 200px;
+    font-size: 35px;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+.textInfo .plot {
+    color: white;
+    width: 500px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.movieContainer {
+    color: white;
+    border: 1px solid red;
+}
+.movie {
+    width: fit-content;
+}
+
+.movie img {
+    width: 180px;
+    height: 260px;
+    border-radius: 2px;
+}
+
+.movieList {
+    max-width: calc(100vw - 105px);
+    overflow: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
