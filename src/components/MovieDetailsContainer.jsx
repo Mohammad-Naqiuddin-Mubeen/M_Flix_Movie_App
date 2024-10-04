@@ -15,43 +15,58 @@ const MovieDetailsContainer = () => {
   }, []);
 
   // -----------------------------------------------------------
-  const [singleMovie, setSingleMovie] = useState()
+  const [singleMovie, setSingleMovie] = useState();
+  const runtime = Math.floor(singleMovie?.runtime / 60) + "h " + (singleMovie?.runtime % 60) + "min"
 
   const getMovieDetails = (e) => {
-    const id = e.currentTarget.id
-    const movie = filterMovie.find((element) => element._id === id)
-    console.log(movie);
-    // console.log(filterMovie);
-    setSingleMovie(movie)
-    dispatch(setFilteredMovie(movie))
-  }
+    const id = e.currentTarget.id;
+    const movie = filterMovie.find((element) => element._id === id);
+    setSingleMovie(movie);
+    dispatch(setFilteredMovie(movie));
+  };
   // ----------------------------------------------------------------
   const fallbackImage = "./404-error.jpg";
   return (
     <>
-      <div className="movieDetailsContainer" >
+      <div className="movieDetailsContainer">
         <div className="movieInfo">
           <div className="textInfo">
-          <h1 className="title">{singleMovie?.title?.toUpperCase()}</h1>
-          {/* <h1 className="title">Dr. Strangelove Or: How I Learned To Stop Worrying And Love The Bomb</h1> */}
-          <p className="plot">{singleMovie?.plot}</p>
+            <h1 className="title">{singleMovie?.title?.toUpperCase()}</h1>
+            <p className="plot">{singleMovie?.plot}</p>
+            <div className="genre">
+              <p className="rating">{singleMovie?.rated || "N/A"}</p>
+              <p className="runtime">{runtime || "N/A"}</p>
+            </div>
+            <div className="btns">
+              <button className="moreInfo">More Info</button>
+            </div>
+          </div>
+          <div className="posterInfo">
+            <img src={singleMovie?.poster} alt={singleMovie?.title} />
           </div>
         </div>
-        {/* <MovieContainer movies={filterMovie}></MovieContainer> */}
         <div className="movieContainer">
-      <h2>Trending Now</h2>
-      <div className="movieList">
-        {filterMovie?.map((movie, index) => {
-          return (
-            <>
-              <div className="movie" onMouseEnter={getMovieDetails} key={index} id={movie._id}>
-                <img src={movie.poster || fallbackImage} alt={movie.title} />
-              </div>
-            </>
-          );
-        })}
-      </div>
-    </div>
+          <h2>Trending Now</h2>
+          <div className="movieList">
+            {filterMovie?.map((movie, index) => {
+              return (
+                <>
+                  <div
+                    className="movie"
+                    onMouseEnter={getMovieDetails}
+                    key={index}
+                    id={movie._id}
+                  >
+                    <img
+                      src={movie.poster || fallbackImage}
+                      alt={movie.title}
+                    />
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </>
   );

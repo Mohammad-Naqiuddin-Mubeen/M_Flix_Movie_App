@@ -8,7 +8,7 @@ const HomePage = () => {
   const backgroundImage = useSelector((state) => state.filter.filteredMovie);
   return (
     <>
-      <main style={{backgroundImage: `url(${backgroundImage?.poster})`}}>
+      <main>
         <div className="navBar">
             <NavBar></NavBar>
         </div>
