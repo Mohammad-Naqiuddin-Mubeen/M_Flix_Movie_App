@@ -1,0 +1,37 @@
+.yearbox {
+    position: absolute;
+    left: 100px;
+    width: 0px;
+    background-color: black;
+    color: white;
+    height: 100%;
+    overflow: hidden;
+    transition: width 1s ease-out;
+}
+
+.yearbox.open {
+    width: 310px;
+}
+
+.filter-title {
+    text-align: center;
+    border-bottom: 2px solid gray;
+}
+
+.year-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.year-li {
+    list-style-type: none;
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s;
+    &:hover {
+        border-bottom: 2px solid red;
+        cursor: pointer;
+    }
+}
